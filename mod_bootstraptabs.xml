@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.1.0"
+	client="site"
+	method="upgrade">
+	<name>Bootstrap Tabs</name>
+	<author>Joomla! Project</author>
+	<creationDate>August 2013</creationDate>
+	<copyright>Copyright (c) 2012-20013 by TemplateMonster - www.templatemonster.com</copyright>
+	<license>Licensed under the GNU/GPLv2:  http://www.opensource.org/licenses/mit-license.php</license>
+	<authorEmail></authorEmail>
+	<authorUrl>www.templatemonster.com</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_BOOTSTRAPTABS_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_bootstraptabs">mod_bootstraptabs.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_bootstraptabs.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_bootstraptabs.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_bootstraptabs.sys.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_BOOTSTRAPTABSFLASH" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="catid"
+					type="category"
+					extension="com_content"
+					multiple="true"
+					default=""
+					size="10"
+					label="JCATEGORY"
+					description="MOD_BOOTSTRAPTABS_FIELD_CATEGORY_DESC" >
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+				<field
+					name="count"
+					type="text"
+					default="5"
+					label="MOD_BOOTSTRAPTABS_FIELD_ITEMS_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_ITEMS_DESC" />					
+
+				<field
+					name="ordering"
+					type="list"
+					default="a.publish_up"
+					label="MOD_BOOTSTRAPTABS_FIELD_ORDERING_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_ORDERING_DESC">
+					<option
+						value="a.publish_up">MOD_BOOTSTRAPTABS_FIELD_ORDERING_PUBLISHED_DATE</option>
+					<option
+						value="a.created">MOD_BOOTSTRAPTABS_FIELD_ORDERING_CREATED_DATE</option>
+					<option
+						value="a.ordering">MOD_BOOTSTRAPTABS_FIELD_ORDERING_ORDERING</option>
+					<option
+						value="rand()">MOD_BOOTSTRAPTABS_FIELD_ORDERING_RANDOM</option>
+				</field>
+
+			</fieldset>
+
+			<fieldset name="ITEM_SETTINGS">
+				
+				<field name="show_tags" type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_BOOTSTRAPTABS_FIELD_SHOW_TAGS_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_SHOW_TAGS_DESC"
+					labelclass="control-label"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+					name="published"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_BOOTSTRAPTABS_FIELD_PUBLISHED_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_PUBLISHED_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+
+				<field
+					name="createdby"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_BOOTSTRAPTABS_FIELD_CREATEDBY_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_CREATEDBY_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+
+
+				<field
+					name="intro_image"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_BOOTSTRAPTABS_FIELD_INTRO_IMAGES_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_INTRO_IMAGES_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+
+				<field
+					name="intro_image_align"
+					type="radio"
+					class="btn-group"
+					default="none"
+					label="MOD_BOOTSTRAPTABS_FIELD_INTRO_IMAGES_ALIGN_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_INTRO_IMAGES_ALIGN_DESC">
+					<option
+						value="none">None</option>
+					<option
+						value="left">left</option>
+					<option
+						value="right">right</option>
+				</field>
+
+				<field
+					name="image"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_BOOTSTRAPTABS_FIELD_IMAGES_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_IMAGES_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+
+				<field
+					name="readmore"
+					type="radio"
+					class="btn-group"
+					default="0"
+					label="MOD_BOOTSTRAPTABS_FIELD_READMORE_LABEL"
+					description="MOD_BOOTSTRAPTABS_FIELD_READMORE_DESC">
+					<option
+						value="0">JHIDE</option>
+					<option
+						value="1">JSHOW</option>
+				</field>		
+				
+
+			</fieldset>
+
+			<fieldset
+				name="advanced">
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+
+			</fieldset>
+		</fields>
+	</config>
+</extension>
