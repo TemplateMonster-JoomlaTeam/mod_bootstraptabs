@@ -11,7 +11,7 @@
 	<license>Licensed under the GNU/GPLv2:  http://www.opensource.org/licenses/mit-license.php</license>
 	<authorEmail></authorEmail>
 	<authorUrl>www.templatemonster.com</authorUrl>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<description>MOD_BOOTSTRAPTABS_XML_DESCRIPTION</description>
 	<files>
 		<filename module="mod_bootstraptabs">mod_bootstraptabs.php</filename>

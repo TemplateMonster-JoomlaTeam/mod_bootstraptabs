@@ -21,7 +21,6 @@ echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab'.($i+1).'_j31_id', $
   
 
 <?php echo JHtml::_('bootstrap.endTabSet');?>
-  </div>
 
   <div class="clearfix"></div>
 
