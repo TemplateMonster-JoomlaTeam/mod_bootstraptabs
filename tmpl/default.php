@@ -11,10 +11,10 @@
 
 defined('_JEXEC') or die;  
 
-echo JHtml::_('bootstrap.startTabSet', 'ID-Tabs-J31-Group', array("active" => "tab1_j31_id"));?>
+echo JHtml::_('bootstrap.startTabSet', 'ID-Tabs-J31-'.$module->id.'-Group', array("active" => "tab1-".$module->id."_j31_id"));?>
   <?php for ($i = 0, $n = count($list); $i < $n; $i ++) :
     $item = $list[$i];
-echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-Group', 'tab'.($i+1).'_j31_id', $item->title); ?> 
+echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-'.$module->id.'-Group', 'tab'.($i+1).'-'.$module->id.'_j31_id', $item->title); ?> 
 <?php require JModuleHelper::getLayoutPath('mod_bootstraptabs', '_item'); ?>
 <?php echo JHtml::_('bootstrap.endTab');?> 
   <?php endfor; ?>
