@@ -9,26 +9,24 @@
  * 
 */
 
-defined('_JEXEC') or die;  
+defined('_JEXEC') or die; 
 
-echo JHtml::_('bootstrap.startTabSet', 'ID-Tabs-J31-'.$module->id.'-Group', array("active" => "tab1-".$module->id."_j31_id"));?>
-  <?php for ($i = 0, $n = count($list); $i < $n; $i ++) :
-    $item = $list[$i];
-echo JHtml::_('bootstrap.addTab', 'ID-Tabs-J31-'.$module->id.'-Group', 'tab'.($i+1).'-'.$module->id.'_j31_id', $item->title); ?> 
-<?php require JModuleHelper::getLayoutPath('mod_bootstraptabs', '_item'); ?>
-<?php echo JHtml::_('bootstrap.endTab');?> 
-  <?php endfor; ?>
-  
+?>
 
-<?php echo JHtml::_('bootstrap.endTabSet');?>
+<ul class="nav nav-tabs" id="bootstrap_tabs_nav_<?php echo $module->id; ?>">
+	<?php for ($i = 0, $n = count($list); $i < $n; $i ++) :
+	$item = $list[$i]; ?>
+	<li<?php if($i == 0) echo ' class="active"'; ?>><a data-toggle="tab" href="#tab<?php echo ($i+1).'-'.$module->id; ?>"><?php echo $item->title; ?></a></li>
+	<?php endfor; ?>
+</ul>
+
+<div class="tab-content" id="bootstrap_tabs_content_<?php echo $module->id; ?>">
+	<?php for ($i = 0, $n = count($list); $i < $n; $i ++) :
+	$item = $list[$i]; ?>
+	<div class="tab-pane fade<?php if($i == 0) echo ' active in'; ?>" id="tab<?php echo ($i+1).'-'.$module->id; ?>">
+		<?php require JModuleHelper::getLayoutPath('mod_bootstraptabs', '_item'); ?>
+	</div>
+	<?php endfor; ?>
+</div>
 
   <div class="clearfix"></div>
-
-<script type="text/javascript">
-	/*
-	jQuery(function($){
-		jQuery('#ID-Tabs-J31-GroupContent .tab-pane').addClass('fade')
-		jQuery('#ID-Tabs-J31-GroupContent .tab-pane.active').addClass('in')
-	})
-*/
-</script>
