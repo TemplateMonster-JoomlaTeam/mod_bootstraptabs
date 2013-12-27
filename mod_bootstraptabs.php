@@ -17,7 +17,8 @@ require_once __DIR__ . '/helper.php';
 $menu = JMenu::getInstance('site');
 
 $app    = JFactory::getApplication(); 
-$document =& JFactory::getDocument();
+$doc = JFactory::getDocument();
+$document =& $doc;
 
 $list = modArticlesNewsHelper::getList($params);
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'));
